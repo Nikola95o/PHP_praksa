@@ -71,7 +71,6 @@ class Auth
             $_SESSION['id'] = $user->id;
             $_SESSION['email'] = $email;
             $_SESSION['name'] = $user->name;
-            var_dump($_SESSION);
             return true;
         }else{
             return false;
@@ -84,5 +83,3 @@ class Auth
         session_destroy();
     }
 }
-
-//var_dump(Auth::register('nikola@hhh.com', 'SOME NAME', 'pass2', 'pass2'));
