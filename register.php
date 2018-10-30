@@ -17,9 +17,10 @@ if(Auth::is_logged_in())
 <head>
     <meta charset="utf-8">
     <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="post" class="userForm">
 
     <label for="email">E-mail:</label><br>
     <input type="text" name="email" placeholder="Email"><br>
