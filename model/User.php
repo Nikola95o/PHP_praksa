@@ -55,28 +55,29 @@ class User
             return $res;
         }catch (Exception $e){
             echo $e->getMessage();
+            return false;
         }
     }
 
 
-    public static function getOneId(int $id)
+    public static function getOneById(int $id)
     {
         return User::getOne('id', $id);
     }
 
 
-    public static function getOneUsername(string $username)
+    public static function getOneByEmail(string $email)
     {
-        return User::getOne('username', $username);
+        return User::getOne('email', $email);
     }
 
-    public static function getOneUsernamePassword(string $username, string $password)
+    public static function getOneByEmailPassword(string $email, string $password)
     {
         try{
             $db = Database::connect();
-            $sql = "SELECT id, email, name, password FROM User WHERE username = :username AND password = :password LIMIT 1;";
+            $sql = "SELECT id, email, name, password FROM User WHERE email = :email AND password = :password LIMIT 1;";
             $stmt = $db->prepare($sql);
-            $stmt->bindParam('username', $username);
+            $stmt->bindParam('email', $email);
             $stmt->bindParam('password', $password);
             $stmt->execute();
             $res = $stmt->fetchObject('User');
@@ -84,6 +85,7 @@ class User
             return $res;
         }catch (Exception $e){
             echo $e->getMessage();
+            return false;
         }
     }
 }

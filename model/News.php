@@ -41,11 +41,11 @@ class News
     {
         $doc = new DOMDocument();
         $div = $doc->createElement('div');
-        $div->setAttribute('style', 'padding: 5px; margin-bot:5px; border: 1px solid red;');
+        $div->setAttribute('class', 'newsBox');
 
         $title = new DOMElement('div', $this->title);
         $div->appendChild($title);
-        $title->setAttribute('style', 'background: rgb(204, 255, 204); padding: 5px; margin-bot:5px;');
+        $title->setAttribute('class', 'title');
 
         $body = new DOMElement('p', $this->body);
         $div->appendChild($body);

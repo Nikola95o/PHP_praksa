@@ -1,0 +1,26 @@
+
+#HelloMessage {
+    background: #8bffc7;
+    padding: 5px;
+}
+
+.newsBox{
+    padding: 5px;
+    margin-bot:5px;
+    border: 1px solid red;
+}
+
+.newsBox + .newsBox{
+    margin-top: 10px;
+}
+
+.newsBox > .title{
+    background: rgb(204, 255, 204);
+    padding: 5px;
+    margin-bot:5px;
+}
+
+#searchForm{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}

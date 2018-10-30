@@ -13,7 +13,7 @@ class Auth
     public static function is_logged_in()
     {
         Auth::session_start();
-        if(!empty($_SESSION['email']))
+        if(!empty($_SESSION['name']))
             return true;
         else
             return false;
@@ -39,8 +39,8 @@ class Auth
     {
         $password1 = trim($password1);
         $password2 = trim($password2);
-        $name = trim($name);
-        $email = trim($email);
+        $name = htmlspecialchars(trim($name));
+        $email = htmlspecialchars(trim($email));
 
         if(filter_var($email, FILTER_VALIDATE_EMAIL) &&
             self::passwords_identical($password1,$password2) &&
