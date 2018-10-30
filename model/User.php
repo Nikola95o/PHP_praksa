@@ -15,10 +15,6 @@ class User
         return $this->$a;
     }
 
-    /**
-     * @param PDO $db
-     * @return bool
-     */
     public static function create(string $email, string $name, string $password):bool
     {
         try{
@@ -37,11 +33,6 @@ class User
         }
     }
 
-    /**
-     * @param $db
-     * @param $att
-     * @return mixed
-     */
     public static function getOne(string $key, $value)
     {
         try{
